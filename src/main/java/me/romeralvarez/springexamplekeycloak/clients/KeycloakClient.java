@@ -1,24 +1,15 @@
 package me.romeralvarez.springexamplekeycloak.clients;
 
 import org.jboss.resteasy.client.jaxrs.internal.ResteasyClientBuilderImpl;
-import org.keycloak.RSATokenVerifier;
-import org.keycloak.TokenVerifier;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
 import org.keycloak.admin.client.resource.RealmResource;
-import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.AccessTokenResponse;
 
+import static me.romeralvarez.springexamplekeycloak.commons.Constants.*;
+
 public class KeycloakClient {
-  private static final String KEYCLOAK_URL = "http://localhost:8080/";
-  private static final String REALM_NAME = "spring-boot-realm-dev";
-  private static final String REALM_MASTER = "master";
-  private static final String ADMIN_CLI = "admin-cli";
-  private static final String USER_CONSOLE = "admin";
-  private static final String USER_PASSWORD = "admin";
-  private static final String CLIENT_SECRET = "HGsxBdcgcbBgn5a4I1jWh37GsybL5Vbq";
-  private static final String CLIENT_ID = "spring-client-api-rest";
 
   private static final Keycloak keycloakInstance = KeycloakBuilder.builder()
       .serverUrl(KEYCLOAK_URL)
@@ -56,6 +47,5 @@ public class KeycloakClient {
         .tokenManager()
         .getAccessToken();
   }
-
 
 }
