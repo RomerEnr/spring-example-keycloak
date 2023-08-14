@@ -15,3 +15,13 @@ jwt:
     converter:
       resource-id: spring-client-api-rest
       principal-attribute: preferred_username
+
+keycloak:
+  url: http://localhost:8080/
+  realm-name: spring-boot-realm-dev
+  realm-master: master
+  admin-cli: admin-cli
+  user-console: admin
+  user-password: admin
+  client-secret: DdWW14rqntQlMvr2AtgCZ1GD7kGSBWsw
+  client-id: spring-client-api-rest

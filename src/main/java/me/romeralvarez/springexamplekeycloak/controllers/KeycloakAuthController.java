@@ -1,8 +1,8 @@
 package me.romeralvarez.springexamplekeycloak.controllers;
 
 import lombok.AllArgsConstructor;
-import me.romeralvarez.springexamplekeycloak.controllers.requests.UserLoginRequest;
-import me.romeralvarez.springexamplekeycloak.services.interfaces.KeycloakAuthService;
+import me.romeralvarez.springexamplekeycloak.dtos.requests.UserLoginRequest;
+import me.romeralvarez.springexamplekeycloak.services.KeycloakAuthService;
 import org.keycloak.representations.AccessTokenResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;

@@ -1,4 +1,4 @@
-package me.romeralvarez.springexamplekeycloak.controllers.requests;
+package me.romeralvarez.springexamplekeycloak.dtos.requests;
 
 import lombok.Builder;
 

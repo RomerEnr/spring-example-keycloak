@@ -22,16 +22,13 @@ public class SecurityConfiguration {
   SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     return http
         .csrf(AbstractHttpConfigurer::disable)
-        .authorizeHttpRequests(authorize -> {
+        .authorizeHttpRequests(authorize ->
           authorize
               .requestMatchers("/api/auth/login").permitAll()
-              .anyRequest().authenticated();
-        })
-        .oauth2ResourceServer(oauth2 -> {
-          oauth2.jwt(jwtConfigurer -> {
-            jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter);
-          });
-        })
+              .anyRequest().authenticated())
+        .oauth2ResourceServer(oauth2 ->
+          oauth2.jwt(jwtConfigurer ->
+            jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter)))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .build();
   }
